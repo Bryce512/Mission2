@@ -3,27 +3,17 @@
 using Mission2;
 
 int numRolls;
-int roll1;
-int roll2;
-int sum;
-int[] results = new int[11];
-Dice dice1 = new Dice();
-Dice dice2 = new Dice();
+int[] results;
+
 
 // INITIALIZE PROMPT
 Console.WriteLine("Welcome to the Dice Throwing Simulator!");
 Console.Write("How many rolls would you like to simulate? ");
 numRolls = Int32.Parse(Console.ReadLine());
 
+Dice dice1 = new Dice(numRolls);
+results = dice1.RollDice();
 
-//SIMULATE ROLLS
-for (int i = 0; i < numRolls; i++)
-{
-    roll1 = dice1.RollDice();
-    roll2 = dice2.RollDice();
-    sum = roll1 + roll2;
-    results[sum - 2] += 1;
-}
 
 //INITIALIZE PRINT RESULTS
 Console.WriteLine();
